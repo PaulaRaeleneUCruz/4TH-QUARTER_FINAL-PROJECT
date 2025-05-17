@@ -1,0 +1,588 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+    color: #e580d8;
+}
+
+header {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 5rem;
+    color: #e580d8;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    position: sticky;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: #df8dc2;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid transparent; 
+}
+
+nav a:hover,
+nav a.active {
+    color: #e190d2;
+    border-bottom: 3px solid #e190d2; 
+    position: sticky;
+}
+
+@media (max-width: 950px) {
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+        position: relative;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #e580d8;
+    }
+
+    nav a {
+        display: block;
+        font-size: 4rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #e580d8;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9%;
+}
+
+.home-container {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.home-container h1 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.home-container h3 {
+    font-size: 5rem;
+    margin: 5rem 0 1rem;
+    font-weight: 800;
+    text-align: left;
+    color: #77d4e1; 
+}
+
+.about {
+    min-height: 100vh;
+    padding: 5rem 9%;
+    background-color: #f5f5f5;
+}
+
+.about-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    transition-duration: 2s;
+}
+
+.about-content p {
+    padding-top: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #81d2ea;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    background-color: #e580d8;
+    color: white;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    transform: rotateZ(5deg);
+}
+
+.btn:hover {
+    background-color: #df8dc2;
+}
+
+.secondary-btn {
+    background-color: #77d4e1;
+    margin-left: 1rem;
+    transform: rotateZ(5deg);
+}
+
+.secondary-btn:hover {
+    background-color: #5fc0d1;
+}
+
+footer {
+    background-color: #77d4e1; 
+    color: white; 
+    padding: 2rem 0;
+    text-align: center; 
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.home-design img,
+.about-img img {
+    float: left;
+    margin-right: 5rem;
+}
+
+.home-design img {
+    height: auto;
+    width: 35%;
+}
+
+.about-img img {
+    margin-top: 5rem;
+    height: auto;
+    width: 50%;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.sprite {
+    background: url('animation-removebg-preview.png') no-repeat 0 0;
+    width: 175px;
+    height: 144px;
+    animation: spriteAnim 0.5s steps(3) infinite;
+}
+
+@keyframes spriteAnim {
+    from {
+        background-position: -29px -60px;
+    }
+    to {
+        background-position: -406px -72px;
+    }
+}
+
+.texting-text {
+    color: #77d4e1;
+}
+
+/* Additional CSS for the signup page */
+.signup-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .signup-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.signup-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-section h1 {
+    margin-top: 0;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.signup-section p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #e580d8;
+    outline: none;
+}
+
+.primary-btn {
+    background-color: #e580d8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: #e580d8;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #e580d8;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #e580d8;
+}
+
+.benefits-section h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.benefits-list {
+    display: grid;
+    gap: 25px;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.benefit-item h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.benefit-item p {
+    color: #666;
+    margin: 0;
+}
+
+/* Additional CSS for the profile page */
+.profile-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .profile-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.profile-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section h1 {
+    margin-top: 0;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.profile-info h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.profile-info p:last-child {
+    margin-bottom: 0;
+}
+
+.profile-info a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.profile-info a:hover {
+    text-decoration: underline;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Activity Section */
+.activity-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.activity-section h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 600;
+    color: #4CAF50;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.recent-activity h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.activity-empty {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.activity-empty p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.secondary-btn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.secondary-btn:hover {
+    background-color: #1976D2;
+}
+
+/* Additional CSS for login page */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #4CAF50;
+}
+
+.remember-me label {
+    color: #555;
+    font-size: 14px;
+}
+
+.forgot-password {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.login-benefits-section {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #2196F3;
+}
+
+.login-benefits-section h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* Animation for login form */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#login-form {
+    animation: fadeIn 0.5s ease-out;
+}
